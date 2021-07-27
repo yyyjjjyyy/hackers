@@ -1,36 +1,6 @@
 $(document).ready(function () {
 
-
-    //메인 이미지 
-    var rankingImg = $('.main_img .ranking li');
-
-for (let i = 0; i < rankingImg.length + 1; i++) {
-  
-    let delay = (i + 1) * 250;
-
-    if (i == rankingImg.length) {
-        $('.link_tag')
-            .delay(delay)           
-            .animate({
-                'top': '80%',                
-                'opacity': '1'
-            }, 600);
-    } else {
-        rankingImg
-            .eq(i)
-            .delay(delay)
-            .animate({
-                'top': '50%',
-                'opacity': '1'
-            }, 500);
-    }
-}
-
-
-
-
-
-    //1. 탭메뉴 콘텐츠 제이쿼리 구현
+    //탭메뉴 콘텐츠 제이쿼리 구현
     let gnb = $('#tab_con >.inner> ul > li');
 
     gnb.mouseenter(function () { //마우스 오버시 아래 내용을 실행한다.
@@ -114,6 +84,8 @@ for (let i = 0; i < rankingImg.length + 1; i++) {
         }
     });
 
+    
+
     // 사업영역 onImg fadein
     var colorOn = $('.business .inner ul li');
 
@@ -150,32 +122,12 @@ for (let i = 0; i < rankingImg.length + 1; i++) {
             $(this)
                 .find('img')
                 .eq(1)
-                .delay(delay_t)
+                .delay(delay)
                 .fadeToggle(1000);
         });
     }
 
-    timer();
-    var current = 0;
-    var $interval;
 
-    function timer() {
-        var $interval = setInterval(function () {
-            slide()
-        }, 2000);
-    }
-
-    function slide() {
-        $(".bannerbox").animate({
-            left: "-=187px"
-        }, 1000, function () {
-            $(this).css({"left": 0});
-            $(".bannerbox").append($("ul").children("li").eq(0));
-        });
-        current++;
-        if (current == 5) 
-            current = 0;
-        }
     
     //나눔
     let swiper = new Swiper(".mySwiper", {
