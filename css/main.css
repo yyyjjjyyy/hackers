@@ -327,6 +327,7 @@ main .visual .search {
 }*/
 .campus {
     background-color: #E9eff3;
+    padding: 40px 0 20px; 
 }
 
 .nav_area .inner div,
@@ -410,7 +411,7 @@ main .visual .search {
     font-weight: bold;
     font-size: 50px;
     text-align: center;
-    padding: 140px 0 20px;
+    padding: 100px 0 60px;
 }
 
 .issue #tab_con {
@@ -535,14 +536,14 @@ main .visual .search {
 .share {
     width: 100%;
     background-color: #83a4b1;
-    padding: 80px 0 100px;
+    padding: 80px 0 80px;
     color: #fff;
     overflow: hidden;
 }
 
 .swiper-container {
     width: 100%;
-    height: 726px;
+    /* height: 726px; */
     overflow: hidden;
 }
 
@@ -611,6 +612,7 @@ main .visual .search {
 .business {
     background: #dee2e4;
     text-align: center;
+    padding-top: 80px;
 }
 
 .business .inner ul {
