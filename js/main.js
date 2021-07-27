@@ -1,19 +1,26 @@
 $(document).ready(function () {
 
-    //탭메뉴 콘텐츠 제이쿼리 구현
-    let gnb = $('#tab_con >.inner> ul > li');
+    //이슈 탭메뉴 콘텐츠 제이쿼리 구현
+    let tabBtn = $('#tab_con >.inner> ul > li');
 
-    gnb.mouseenter(function () { //마우스 오버시 아래 내용을 실행한다.
+    tabBtn.mouseenter(function () { //마우스 오버시 아래 내용을 실행한다.
+        $(this).addClass('t_active');
+        $(this).siblings().removeClass('t_active'); //탭버튼 서식 (스프라이트이미지)
         const tabBanner = $(this).attr('data-tab-banner'); //가져오기
-        //console.log(tabBanner); 증명하기
+        //console.log(tabBanner); //증명하기
         $('.tab_banner img').attr('src', tabBanner); //대입하기
 
         const tabCon = $(this).attr('data-tab-con');
         $('#tab_con').attr('style', 'background-image: url(' + tabCon +');');
+         
     });
 
-    //.issue #tab_con, .issue #tab_con .tab_banner bg이미지 바뀌도록 배너 슬라이드
 
+     
+
+
+
+    //이슈 배너 슬라이드
     let n = $('.banner_wrap .page_btn li').index(); //0
     console.log(n);
 
