@@ -116,12 +116,18 @@ main .visual .main_img .ranking {
     display: flex;
     justify-content: space-around;
     left: 50%;
+}
+
+main .visual .main_img .ranking {
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
 main .visual .main_img ul.link_tag {
-    top: 80%;
+    /* top: 80%; */
+ transform: translateX(-50%);
+    z-index: 999;
+
 }
 
 main .visual .main_img ul.link_tag li:first-child {
@@ -355,7 +361,7 @@ main .visual .search {
 
 .issue #tab_con {
     width: 100%;
-    background-image: url("../img/issue_mv1_bg.jpg");
+    /* background-image: url("../img/issue_mv1_bg.jpg"); */
     background-position: center;
 }
 
@@ -373,12 +379,8 @@ main .visual .search {
 
 }
 
-.issue #tab_con .tab_banner {
-    width: 100%;
-    height: 500px;
-    background-image: url("../img/issue_mv1_bg.jpg");
-    background-position: center;
-
+.issue #tab_con .tab_banner {  
+    height: 500px;   
 }
 
 .issue #tab_con ul.tab_menu {
@@ -489,7 +491,8 @@ main .visual .search {
 
 .swiper-wrapper {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; 이거있으면 무한루프 안돼!!!!!!!!!!!!!!!*/
+
 }
 .s_wrap{padding-top: 20px;}
 

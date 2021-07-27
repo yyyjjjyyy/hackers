@@ -1,13 +1,45 @@
 $(document).ready(function () {
 
+
+    //메인 이미지 
+    var rankingImg = $('.main_img .ranking li');
+
+for (let i = 0; i < rankingImg.length + 1; i++) {
+  
+    let delay = (i + 1) * 250;
+
+    if (i == rankingImg.length) {
+        $('.link_tag')
+            .delay(delay)           
+            .animate({
+                'top': '80%',                
+                'opacity': '1'
+            }, 600);
+    } else {
+        rankingImg
+            .eq(i)
+            .delay(delay)
+            .animate({
+                'top': '50%',
+                'opacity': '1'
+            }, 500);
+    }
+}
+
+
+
+
+
     //1. 탭메뉴 콘텐츠 제이쿼리 구현
-    let gnb = $('#tab_con >.inner> ul > li >a');
+    let gnb = $('#tab_con >.inner> ul > li');
 
     gnb.mouseenter(function () { //마우스 오버시 아래 내용을 실행한다.
-        let url = $(this).attr('href'); //가져오기
-        //console.log(url); 증명하기
-        $('.tab_banner img').attr('src', url); //대입하기
+        const tabBanner = $(this).attr('data-tab-banner'); //가져오기
+        //console.log(tabBanner); 증명하기
+        $('.tab_banner img').attr('src', tabBanner); //대입하기
 
+        const tabCon = $(this).attr('data-tab-con');
+        $('#tab_con').attr('style', 'background-image: url(' + tabCon +');');
     });
 
     //.issue #tab_con, .issue #tab_con .tab_banner bg이미지 바뀌도록 배너 슬라이드
@@ -152,11 +184,47 @@ $(document).ready(function () {
         },
         // autoplay: true,
         speed: 3000,
+        // speed: 100,
         loop: true,
+        loopFillGroupWithBlank: true,
         slidesPerView: 5, //한번에 보여 줄 슬라이드 개수
         spaceBetween: 10, //슬라이드 사이 여백
         centeredSlides: true, // 1번 슬라이드가 "가운데" 보이기
     });
+
+    /*
+    
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+    */
 
  
 
@@ -165,15 +233,17 @@ $(document).ready(function () {
    let s_slide = $('.s_wrap .swiper-slide');
     s_slide.hover(function () {
        // 마우스 오버시 이미지 변경
-        $(this).find('img').attr('src')
-        .replace('off','on');
+        // $(this).find('img').attr('src').replace('off','on');
+        const img = $(this).find('img');
+        const src = img.attr('src').replace('off','on');
+        img.attr('src', src);
+
     }, function () {
        // 마우스 아웃시 원래
        // 이미지가 나오도록 한다
-            $(this)
-            .find('img')
-            .attr('src')
-            .replace('on','off');
+        const img = $(this).find('img');
+        const src = img.attr('src').replace('on','off');
+        img.attr('src', src);
     });
 
 });
