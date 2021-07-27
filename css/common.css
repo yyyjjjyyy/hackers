@@ -1,11 +1,80 @@
 @charset "utf-8";
-*{margin: 0 auto; padding: 0;}
-a{color: #333; text-decoration: none;}
-ol,li,ul{list-style: none;}
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+ol,
+li,
+ul {
+    list-style: none;
+}
 
 body {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 13px;
+    letter-spacing: -1;
 }
 
 
+footer,
+main {
+    width: 100%;
+}
+
+.inner {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+
+
+main{
+    display: grid;
+    grid-template-rows:90vh auto auto auto auto auto auto auto auto;
+    /* grid-gap: 25px; */
+    grid-template-areas:    
+    "visual"
+    "nav_area"
+    "campus"
+    "issue"
+    "business"
+    "brand"
+    "share"
+    "contact"
+    "footer";    
+}
+
+section:nth-child(1){grid-area: visual;}
+section:nth-child(2){grid-area: nav_area;}
+section:nth-child(3){grid-area: campus;}
+section:nth-child(4){grid-area: issue;}
+section:nth-child(5){grid-area: business;}
+section:nth-child(6){grid-area: brand;}
+section:nth-child(7){grid-area: share;}
+section:nth-child(8){grid-area: contact;}
+footer{grid-area: footer;}
+
+section{width: 100%;
+    padding: 25px 0 50px;
+}
+
+.clearfix, .clearfix:after, .clearfix::before{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.visual{
+    height:80vh;
+    overflow: hidden;
+}
+
+h2{font-size:40px; font-weight: bold; text-align: center; padding-bottom: 20px;}
+h3{font-size: 20px; text-align: center; padding-bottom: 60px;}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -40,11 +41,19 @@
 
         <!-- css서식 -->
         <link rel="stylesheet" href="./css/common.css">
-        <link rel="stylesheet" href="./css/layout.css">
+        <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/main.css">
 
         <!--벤더프리픽스 css추가속성 사용시 각 브라우저별 접두사 붙이지 않아도 되는 스크립트.-->
-        <script src="./script/prefixfree.min.js"></script>
+        <!-- <script src="./script/prefixfree.min.js"></script> -->
+
+        <!-- 제이쿼리 라이브러리 연결-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- bx slider -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
         <!-- lodash 스크롤제어 라이브러리. 라이브러리는 main.js 위쪽에 있어야함! -->
         <script
@@ -67,7 +76,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"></script>
 
-        <!-- 스와이퍼 js-->
+        <!-- Swiper JS -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
         <!-- scroll magic -->
@@ -77,264 +86,952 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"></script>
 
-        <!-- 유튜브js -->
-        <script defer="defer" src="./js/youtube.js"></script>
-
         <!-- 메인js -->
         <script defer="defer" src="./js/main.js"></script>
+        <script></script>
+
     </head>
+
     <body>
-             <!-- header -->
-        <header>
-            <div class="inner">
-                <h1>
-                    <a href="#" title="페이지 상단 이동"><img src="./img/logo.png" alt="해커스 교육그룹"></a>
-                </h1>
-
-                <div>
-                    <a href="javascriptLvoid(0)">
-                        지식의 불평등을 해소하고 올바른 교육의 나눔을 실천합니다.<br>
-                        해커스 교육그룹
-                        <span>나눔의 철학 확인하기 &#x25B6;</span>
-                    </a>
-                </div>
-
-                <nav>
-                    <ul class="gnb">
-                        <li>
-                            <a href="javascript:void(0)">로그인</a></li>
-                        <li>
-                            <a href="javascript:void(0)">회원가입</a></li>
-                        <li>
-                            <a href="javascript:void(0)">고객센터</a></li>
-                        <li>
-                            <a href="javascript:void(0)">해커스에 바란다</a></li>
-                        <li>
-                            <a href="javascript:void(0)">인재채용</a></li>
-                        <li>
-                            <a href="javascript:void(0)">eng</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
 
         <!-- main -->
         <main>
-            <section class="visual">
-                <div class="main_img">
-                    <video autoplay="autoplay" loop="loop" muted="muted">
-                        <source
-                            src="http://cdndown.hackers.com/oap/mp4/191106_hackersdot_banner_1.mp4"
-                            type="video/mp4">
-                    </video>
+            <!-- 비주얼영역 -->
+            <section class="visual clearfix">
+                <video autoplay="autoplay" loop="loop" muted="muted">
+                    <source
+                        src="http://cdndown.hackers.com/oap/mp4/191106_hackersdot_banner_1.mp4"
+                        type="video/mp4">
+                </video>
+                <div class="video_bg">
+                    <div class="inner">
+                        <!-- header -->
+                        <div class="header">
+                            <h1>
+                                <a href="#" title="페이지 상단 이동"><img src="./img/logo.png" alt="해커스 교육그룹"></a>
+                            </h1>
 
-                    <ul class="ranking">
-                        <li><img src="./img/main_img1.png" alt="인강 1위"></li>
-                        <li><img src="./img/main_img2.png" alt="학원 1위"></li>
-                        <li><img src="./img/main_img3.png" alt="교재 1위"></li>
-                    </ul>
+                            <div class="header_txt">
+                                <a href="javascript:void(0)">
+                                    지식의 불평등을 해소하고 올바른 교육의 나눔을 실천합니다.<br>
+                                    해커스 교육그룹
+                                    <span>나눔의 철학 확인하기 &#x25B6;</span>
+                                </a>
+                            </div>
 
-                    <ul class="link_tag">
-                        <li>hot</li>
-                        <li>
-                            <a href="javascript:void(0)" title="공인중개사 입문서 무료 배포">공인중개사 입문서 무료 배포</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" title="토익기본서+1000제 교재 무료">토익기본서+1000제 교재 무료</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" title="토익850+ 온라인특강">토익850+ 온라인특강</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" title="0원으로 공무원 합격">0원으로 공무원 합격</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" title="합격까지 취업인강 무한수강">합격까지 취업인강 무한수강</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" title="전기기사0원+평생수강">전기기사0원+평생수강</a>
-                        </li>
-                    </ul>
+                            <nav>
+                                <ul class="gnb">
+                                    <li>
+                                        <a href="javascript:void(0)">로그인</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">회원가입</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">고객센터</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">해커스에 바란다</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">인재채용</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">eng</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="main_img">
+
+                            <ul class="ranking">
+                                <li><img src="./img/main_img1.png" alt="인강 1위"></li>
+                                <li><img src="./img/main_img2.png" alt="학원 1위"></li>
+                                <li><img src="./img/main_img3.png" alt="교재 1위"></li>
+                            </ul>
+
+                            <ul class="link_tag">
+                                <li>hot</li>
+                                <li>
+                                    <a href="javascript:void(0)" title="공인중개사 입문서 무료 배포">공인중개사 입문서 무료 배포</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" title="토익기본서+1000제 교재 무료">토익기본서+1000제 교재 무료</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" title="토익850+ 온라인특강">토익850+ 온라인특강</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" title="0원으로 공무원 합격">0원으로 공무원 합격</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" title="합격까지 취업인강 무한수강">합격까지 취업인강 무한수강</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" title="전기기사0원+평생수강">전기기사0원+평생수강</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
                     <div class="search">
                         원하시는 키워드를 입력하여 빠른 검색하기
                         <img src="./img/search.png" alt="검색 아이콘">
                     </div>
-
                 </div>
 
             </section>
+            <!--//비주얼영역 -->
 
             <!-- 해커스 교육 카테고리 -->
-            <section class="nav_area">
-                <div class="inner"></div>
-            </section>
-            <!-- //해커스 교육 카테고리 -->
-
-            <!-- 해커스 캠퍼스 -->
-            <section class="campus">
-                <div class="inner"></div>
-            </section>
-            <!-- //해커스 캠퍼스 -->
-
-            <!-- 해커스 이슈 -->
-            <section class="issue">
-                <article></article>
-
-                <article>
-                    <h2>사업영역</h2>
-                    <h3>글로벌 교육의 미래, 해커스 교육그룹이 만들어갑니다.</h3>
-                    <ul class="banner01 inner">
-                        <li>
-                            <a href="javascript:void(0)"><img src="./img/" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="./img/" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="./img/" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="./img/" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="./img/" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="./img/" alt=""></a>
-                        </li>
-                    </ul>
-
-                </article>
-
-            </section>
-            <!-- //해커스 이슈 -->
-
-            <!-- 사업영역 -->
-            <section class="business">
+            <section class="nav_area clearfix">
                 <div class="inner">
-                    <ul class="">
-                        <li></li>
-                    </ul>
-                </div>
-            </section>
-            <!-- //사업영역 -->
+                    <div class="clea">
+                        <h2>어학/유학</h2>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" title="토익">토익</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="토익 스피킹">토익 스피킹</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="오픽">오픽</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="영어회화">영어회화</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="영어문법">영어문법</a>
+                            </li>
 
-            <!-- 1위 -->
-            <section>
-                <img src="./img/first_hackers_re.png" alt="대한민국 대표 교육그룹, 5년 연속 1위 해커스">
-                <div>
+                            <li>
+                                <a href="javascript:void(0)" title="중 &#x00B7; 고등 영어">중 &#x00B7; 고등 영어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="텝스">텝스</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="지텔프">지텔프(G-TELP)</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="토플">토플</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="GRE">GRE</a>
+                            </li>
 
-                    <p>[해커스] 한국 소비자포험 선정 ‘올해의 브랜드대상’ 12~19 5년 연속 교육그룹 부문 1위</p>
-                    <p>[해커스] 한경비즈니스 선정 2019 한국 브랜드선호도 교육(교육그룹) 부문 1위</p>
-                    <p>[해커스어학원] 한국표준협회 선정, 2019 프리미엄 브랜드 지수(KS-PBI) 종합외국어학원 부문 1위</p>
-                    <p>[해커스중국어] 주간동아 선정 2019 한국 브랜드 만족지수 교육(중국어인강) 부문 1위</p>
-                    <p>[해커스일본어] 한경비스니스 선정 2020 한국브랜드선호도 교육(온·오프라인 일본어) 1위 해커스</p>
-                    <p>[해커스톡] 2018 헤럴드미디어 선정 대학생이 선정한 영어회화 인강 1위</p>
-                    <p>[해커스톡] 2020 한국품질만족도 교육(온·오프라인 기초영어) 부문 1위 해커스</p>
-                    <p>[해커스인강] 헤럴드선정 2018 대학생 선호브랜드 대상 ‘대학생이 선정한 외국어인강’ 부문 1위</p>
-                    <p>[해커스공무원] 2015, 2016, 2018 헤럴드 미디어 선정 대학생이 선정한 최단기 합격 공무원 학원 1위</p>
-                    <p>[해커스경찰] 한경비즈니스 선정 2019 한국소비자만족지수 교육(경찰공무원) 부문 1위</p>
-                    <p>[해커스소방] 2020 한국품질만족도 교육(온·오프라인 소방공무원) 부문 1위 해커스</p>
-                    <p>[해커스한국사] 2020 한국품질만족도 교육(온·오프라인 한국사능력검정) 부문 1위 해커스</p>
-                    <p>[해커스 공인중개사] 한경비즈니스선정 2020 한국품질만족도 교육(온오프라인 공인중개사) 부문 1위 해커스</p>
-                    <p>[해커스 주택관리사] 한경비즈니스선정 2020 한국품질만족도 교육(온·오프라인 주택관리사) 부문 1위 해커스</p>
-                    <p>[해커스 원격평생교육원] 국평원 정보공시, 전체과목 별 학습자 수 지계기준 (2018년 하반기)</p>
-                    <p>[해커스자격증] 한경비즈니스 선정 2020 한국품질만족도 교육(온·오프라인 자격증) 부문 1위 해커스</p>
-                    <p>[해커스한국사] 한경비즈니스 선정 2020 한국품질만족도 교육(온·오프라인 한국사능력검정) 부문 1위 해커스</p>
-                    <p>[해커스독학사] 한경비즈니스 선정 2020 한국품질만족도 교육(온·오프라인 독학사) 부문 1위 해커스</p>
-                    <p>[해커스임용] 헤럴드미디어 2018 대학생이 선정한 교원임용학원 강의만족도 1위</p>
-                    <p>[해커스편입] 한경비즈니스 선정 2020 한국품질만족도 교육(온·오프라인 편입) 부문 1위 해커스</p>
-                    <p>[해커스 유학컨설팅] 중앙SUNDAY선정 2017소비자평가 No.1 브랜드 유학부문 1위</p>
-                    <p>[해커스 SAT] 한경비즈니스 선정 2020 한국품질만족도 교육(온·오프라인 SAT) 부문 1위 해커스</p>
-                    <p>[해커스영어] 2016 고객만족브랜드 대상 대한민국 만족도 1위 영어사이트부문 수상 (한국마케팅포럼 주관)</p>
-                    <p>[고우해커스] 랭키닷컴 유학/어학연수 분야 기준 방문자 수 1위, 2019년 8월 3, 4주 발표 랭키순위 기준</p>
-                    <p>[교재] 해커스 토익 리딩 - 20년 동안 예스 24 '베스트셀러 20위'에 가장 많이 이름을 올린 도서 1위</p>
-                </div>
-            </section>
+                            <li>
+                                <a href="javascript:void(0)" title="IELTS">IELTS</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="LSAT">LSAT</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="SAT &#x00B7; ACT">SAT · ACT</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="미국/아시아 학부유학">미국/아시아 학부유학</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="석박사 유학/연수컨설팅">석박사 유학/연수컨설팅</a>
+                            </li>
 
-            <!-- //1위 -->
+                            <li>
+                                <a href="javascript:void(0)" title="TOPIK">TOPIK</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="중국어">중국어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="일본어">일본어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="스페인어">스페인어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="독일어">독일어</a>
+                            </li>
 
-            <!-- 나눔활동 -->
-            <section class="share">
-                <h2>나눔활동</h2>
-                <h3>나눔의 철학을 실천하는 해커스 교육그룹</h3>
-                <ul>
-                    <li></li>
-                </ul>
+                            <li>
+                                <a href="javascript:void(0)" title="프랑스어">프랑스어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="러시아어">러시아어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="베트남어">베트남어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="이탈리아어">이탈리아어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="아랍어">아랍어</a>
+                            </li>
 
-            </section>
-            <!-- //나눔활동 -->
+                            <li>
+                                <a href="javascript:void(0)" title="인도네시아어">인도네시아어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="태국어">태국어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="포르투갈어">포르투갈어</a>
+                            </li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                        </ul>
+                    </div>
 
-            <!-- contact -->
-            <section>
-                <div class="inner">
-                    <h2>당신이 만드는 해커스</h2>
-                    <h3>해커스는 여러분들에게 언제나 열려 있습니다.<br>더 나은 해커스를 위해 여러분의 목소리에 귀 기울이겠습니다.</h3>
-                    <ul>
-                        <li><img src="./img/recruit.png" alt="해커스 인재채용">
-                            <h4>해커스 인재채용</h4>
-                            <p>교육분야 최고의 권위를 이어나갈 인재를 모집합니다</p>
-                            <a class="btn">채용 사이트</a>
-                        </li>
-                        <li><img src="./img/wish.png" alt="해커스에 바란다">
-                            <h4>해커스에 바란다</h4>
-                            <p>불편사항 및 오류를 남겨주시면, 성실히 응답해 드리겠습니다</p>
-                            <a class="btn">의견남기기</a>
-                        </li>
-                        <li><img src="./img/counsel.png" alt="수강상담">
-                            <h4>수강상담</h4>
-                            <p>회원 여러분의 궁금한 사항을 해결해 드리겠습니다</p>
-                            <a class="btn">상담하기</a>
-                        </li>
-                        <li><img src="./img/ad.png" alt="콘텐츠/광고제휴">
-                            <h4>콘텐츠/광고제휴</h4>
-                            <p>해커스와 함께 광고 및 제휴를 진행하실 분들을 기다립니다</p>
-                            <a class="btn">B2B 제휴제안</a>
-                            <a class="btn">해커스 매거진 광고</a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <!-- //contact -->
-        </main>
+                    <div>
+                        <h2>공무원/임용</h2>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" title="9급 공무원">9급 공무원</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="7급 공무원">7급 공무원</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="경찰공무원">경찰공무원</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="소방공무원">소방공무원</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="군무원">군무원</a>
+                            </li>
 
-        <!-- footer -->
-        <footer>
-            <div>
-                <p>
-                    고객상담센터
-                    <b>02-566-0001</b>
-                </p>
-                <p>
-                    주중 06:30 ~ 22:00 / 주말 08:00 ~ 22:00</p>
-                <ul>
-                    <li>
-                        <a href="" title="해커스 블로그로 이동"></a><img src="./img/blog.png" alt="블로그 아이콘"></li>
-                    <li>
-                        <a href="" title="해커스 페이스북으로 이동"></a><img src="./img/facebook.png" alt="페이스북 아이콘"></li>
-                    <li>
-                        <a href="" title="해커스 트위터로 이동"></a><img src="./img/twitter.png" alt="트위터 아이콘"></li>
-                    <li>
-                        <a href="" title="해커스 유튜브로 이동"></a><img src="./img/youtube.png" alt="유튜브 아이콘"></li>
-                </ul>
-            </div>
-            <div>
-                <img src="./img/footer_logo.png" alt="해커스 교육그룹 로고">
-                <ul class="footer_navi">
-                    <li>
-                        <a href="#" title="오시는길">오시는길</a>
-                    </li>
-                    <li>
-                        <a href="#" title="오시는길">불편사항 신고</a>
-                    </li>
-                    <li>
-                        <a href="#" title="오시는길">개인정보처리방침</a>
-                    </li>
-                </ul>
-                <p>Copyright &copy; HAKCERS Education Group All Right reserved</p>
-            </div>
-        </footer>
+                            <li>
+                                <a href="javascript:void(0)" title="PSAT">PSAT</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="외무영사직">외무영사직</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="세무직">세무직</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="관세직">관세직</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="법원직">법원직</a>
+                            </li>
 
-    </body>
-</html>
+                            <li>
+                                <a href="javascript:void(0)" title="검찰직">검찰직</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="교정직">교정직</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="계리직">계리직</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="간호보건직">간호보건직</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="기술직">기술직</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>자격증</h2>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" title="공인중개사">공인중개사</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="전산세무회계">전산세무회계</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="한국사능력검정시험">한국사능력검정시험</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="전기(산업)기사">전기(산업)기사</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="산업안전(산업)기사">산업안전(산업)기사</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)" title="주택관리사">주택관리사</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="세무사 (CTA)">세무사 (CTA)</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="회계사 (CPA)">회계사 (CPA)</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="재경관리사">재경관리사</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="AFPK">AFPK</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)" title="CFP">CFP</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="신용분석사">신용분석사</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="국제무역사">국제무역사</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="무역영어">무역영어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="투자자산운용사">투자자산운용사</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)" title="은행 FP">은행 FP</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="투자권유대행인">투자권유대행인</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="외환전문역">외환전문역</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="매경TEST/테셋(TESAT)">매경TEST/테셋(TESAT)</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="은행텔러">은행텔러</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)" title="컴퓨터활용능력">컴퓨터활용능력</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="MOS/워드프로세서">MOS/워드프로세서</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="ITQ/GTQ">ITQ/GTQ</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="투자자산운용사">투자자산운용사</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="정보처리기사">정보처리기사</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="사무자동화산업기사">사무자동화산업기사</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="KBS한국어능력시험">KBS한국어능력시험</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div>
+                        <h2>취업/편입</h2>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" title="대기업 취업">대기업 취업</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="공기업 취업">공기업 취업</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="편입">편입</a>
+                            </li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>학점은행(자격&#x00B7;학위)</h2>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" title="사회복지사 2급">사회복지사 2급</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="보육교사 2급">보육교사 2급</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="한국어교원">한국어교원</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="경영학">경영학</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="독학사">독학사</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>커뮤니티</h2>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" title="해커스영어">해커스영어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="고우해커스">고우해커스</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="토익정답실시간확인">토익정답실시간확인</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="해커스 영어 대회">해커스 영어 대회</a>
+                            </li>
+                            <li>&nbsp;</li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>교재/교육서비스</h2>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" title="해커스교재">해커스교재</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="기업교육">기업교육</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="대학교육">대학교육</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="콘텐츠 제휴">콘텐츠 제휴</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="해커스매거진">해커스매거진</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="해커스북 중&#x00B7;고등">해커스북 중 &#x00B7; 고등</a>
+                            </li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2>에듀테크</h2>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" title="해커스ONE">해커스ONE</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="해커스어플">해커스어플</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="해커스토익빅플">해커스토익빅플</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="패스체커">패스체커</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="해커스톡 그림보카">해커스톡 그림보카</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- //해커스 교육 카테고리 -->
+
+                <!-- 해커스 캠퍼스 -->
+                <section class="campus">
+                    <div class="inner">
+                        <div>
+                            <h2>학원 캠퍼스</h2>
+                            <ul class="campus_ul">
+                                <div>
+                                    <li>
+                                        <a href="javascript:void(0)" title="어학원">
+                                            <h3>어학원</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="강남역 캠퍼스">강남역 캠퍼스</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="종로캠퍼스">종로 캠퍼스</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="대구 동성로 캠퍼스">대구 동성로 캠퍼스</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="LA 캠퍼스">LA 캠퍼스</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="취업 학원">
+                                            <h3>취업 학원</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="강남역 캠퍼스">강남역 캠퍼스</a>
+                                    </li>
+                                </div>
+                                <div>
+
+                                    <li>
+                                        <a href="javascript:void(0)" title="공무원 학원">
+                                            <h3>공무원 학원</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="강남역 캠퍼스">강남역 캠퍼스</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="노량진 캠퍼스">노량진 캠퍼스</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="취업 학원">
+                                            <h3>경찰 학원</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="노량진 캠퍼스">노량진 캠퍼스</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="취업 학원">
+                                            <h3>소방 학원</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="노량진 캠퍼스">노량진 캠퍼스</a>
+                                    </li>
+                                </div>
+                                <div>
+                                    <li>
+                                        <a href="javascript:void(0)" title="편입 학원">
+                                            <h3>편입 학원</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="종로 본원">종로 본원</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="강남역 캠퍼스">강남역 캠퍼스</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="수원역 캠퍼스">수원역 캠퍼스</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="세무사&#x00B7;회계사 학원">
+                                            <h3>세무사&#x00B7;회계사 학원</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="강남역 캠퍼스">강남역 캠퍼스</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="유학컨설팅">
+                                            <h3>유학 컨설팅</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="강남역 캠퍼스">강남역 캠퍼스</a>
+                                    </li>
+                                </div>
+                                <div>
+                                    <li>
+                                        <a href="javascript:void(0)" title="공인중개사 학원">
+                                            <h3>공인중개사 학원</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="강남 본원">강남 본원</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="종로학원">종로 학원</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="일산학원">일산 학원</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title=" 수원학원">수원 학원</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="주택관리사 학원">
+                                            <h3>주택관리사 학원</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="강남 학원">강남 학원</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="임용 학원">
+                                            <h3>임용 학원</h3>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="노량진 캠퍼스">노량진 캠퍼스</a>
+                                    </li>
+                                </div>
+                          
+                        </div>
+
+                    </div>
+                </section>
+                <!-- //해커스 캠퍼스 -->
+                <!-- 해커스 이슈 -->
+                <section class="issue">
+                    <h2>
+                        해커스 이슈</h2>
+        
+                    <article id="tab_con">
+                        <div class="inner">
+        
+                        <div class="tab_banner">
+                            <img src="./img/issue_mv1_tit.png" alt="300만의 선택, 해커스어학원">
+                        </div>
+                        <ul class="tab_menu">
+                            <li>
+                                <a href="./img/issue_mv1_tit.png">300만의 선택 <br> 해커스어학원</a>
+                            </li>
+                            <li>
+                                <a href="./img/issue_mv2_tit.png">공인중개사<br>합격자모임</a>
+                            </li>
+                            <li>
+                                <a href="./img/issue_mv3_tit.png">공무원<br>합격자의 밤</a>
+                            </li>
+                            <li>
+                                <a href="./img/issue_mv4_tit.png">상위권대 합격비법<br>해커스 편입</a>
+                            </li>
+                            <li>
+                                <a href="./img/issue_mv5_tit.png">해커스 체전</a>
+                            </li>
+                            <li>
+                                <a href="./img/issue_mv6_tit.png">하버드 국제보건학<br>합격 스토리</a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    </article>
+     
+        
+                    <article class="banner_wrap">
+                        <ul class="banner_slide inner">
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/banner_0709_v2.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr2.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/hackercom_talk_allfreepass0won_bnr3.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr4.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr5_v3.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr17_v8.jpg" alt=""></a>
+                            </li>
+                        </ul>
+                
+                        <ul class="banner_slide inner">
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr24_v9.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr8.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr9.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr10_v2.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr11_v3.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr1_v25.jpg" alt=""></a>
+                            </li>
+                        </ul>
+                
+                        <ul class="banner_slide inner">
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr7_v06.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr14_v4.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr19_v2.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr15_v4.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/issue_bnr7_v9.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img src="./img/banner_210303_v2.jpg" alt=""></a>
+                            </li>
+                        </ul>
+                
+                        <!-- 페이지 -->
+                        <ul class="page_btn">
+                            <li class="page_on">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ul>
+                    </article>
+                    </section>
+                    <!-- //해커스 이슈 -->
+
+                    <!-- 사업영역 -->
+                    <section class="business">
+                        <div class="inner">
+                            <h2>사업영역</h2>
+                            <h3>글로벌 교육의 미래, 해커스 교육그룹이 만들어갑니다.</h3>
+                            <ul>
+                                <li>
+                                    <a href="#" title="연구&#x0026;출판">
+                                        <img src="./img/business_menu1_off.jpg" alt="연구&#x0026;출판">
+                                        <img src="./img/business_menu1_on.jpg" alt="연구&#x0026;출판">
+                                        <img src="./img/business_menu1_list.jpg" alt="연구&#x0026;출판">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="어학">
+                                        <img src="./img/business_menu2_off.jpg" alt="어학">
+                                        <img src="./img/business_menu2_on.jpg" alt="어학">
+                                        <img src="./img/business_menu2_list.jpg" alt="어학">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" title="공무원/임용">
+                                        <img src="./img/business_menu3_off.jpg" alt="공무원/임용">
+                                        <img src="./img/business_menu3_on.jpg" alt="공무원/임용">
+                                        <img src="./img/business_menu3_list.jpg" alt="공무원/임용">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="취업">
+                                        <img src="./img/business_menu4_off.jpg" alt="취업">
+                                        <img src="./img/business_menu4_on.jpg" alt="취업">
+                                        <img src="./img/business_menu4_list.jpg" alt="취업">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="온라인 커뮤니티">
+                                        <img src="./img/business_menu5_off.jpg" alt="온라인 커뮤니티">
+                                        <img src="./img/business_menu5_on.jpg" alt="온라인 커뮤니티">
+                                        <img src="./img/business_menu5_list_v2.jpg" alt="온라인 커뮤니티">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="자격증">
+                                        <img src="./img/business_menu6_off.jpg" alt="자격증">
+                                        <img src="./img/business_menu6_on.jpg" alt="자격증">
+                                        <img src="./img/business_menu6_list.jpg" alt="자격증">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="기초영어회화">
+                                        <img src="./img/business_menu7_off.jpg" alt="기초영어회화">
+                                        <img src="./img/business_menu7_on.jpg" alt="기초영어회화">
+                                        <img src="./img/business_menu7_list.jpg" alt="기초영어회화">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="편입">
+                                        <img src="./img/business_menu8_off.jpg" alt="편입">
+                                        <img src="./img/business_menu8_on.jpg" alt="편입">
+                                        <img src="./img/business_menu8_list.jpg" alt="편입">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="학점은행제">
+                                        <img src="./img/business_menu9_off.jpg" alt="학점은행제">
+                                        <img src="./img/business_menu9_on.jpg" alt="학점은행제">
+                                        <img src="./img/business_menu9_list_v2.jpg" alt="학점은행제">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="유학">
+                                        <img src="./img/business_menu10_off.jpg" alt="유학">
+                                        <img src="./img/business_menu10_on.jpg" alt="유학">
+                                        <img src="./img/business_menu10_list.jpg" alt="유학">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- //사업영역 -->
+
+                    <!-- 1위 -->
+                    <section class="first_place">
+                        <img src="./img/first_hackers_re.png" alt="대한민국 대표 교육그룹, 5년 연속 1위 해커스">
+                        <div class="first_txt">
+                            <p>[해커스] 한국 소비자포험 선정 ‘올해의 브랜드대상’ 12~19 5년 연속 교육그룹 부문 1위</p>
+                            <p>[해커스] 한경비즈니스 선정 2019 한국 브랜드선호도 교육(교육그룹) 부문 1위</p>
+                            <p>[해커스어학원] 한국표준협회 선정, 2019 프리미엄 브랜드 지수(KS-PBI) 종합외국어학원 부문 1위</p>
+                            <p>[해커스중국어] 주간동아 선정 2019 한국 브랜드 만족지수 교육(중국어인강) 부문 1위</p>
+                            <p>[해커스일본어] 한경비스니스 선정 2020 한국브랜드선호도 교육(온·오프라인 일본어) 1위 해커스</p>
+                            <p>[해커스톡] 2018 헤럴드미디어 선정 대학생이 선정한 영어회화 인강 1위</p>
+                            <p>[해커스톡] 2020 한국품질만족도 교육(온·오프라인 기초영어) 부문 1위 해커스</p>
+                            <p>[해커스인강] 헤럴드선정 2018 대학생 선호브랜드 대상 ‘대학생이 선정한 외국어인강’ 부문 1위</p>
+                            <p>[해커스공무원] 2015, 2016, 2018 헤럴드 미디어 선정 대학생이 선정한 최단기 합격 공무원 학원 1위</p>
+                            <p>[해커스경찰] 한경비즈니스 선정 2019 한국소비자만족지수 교육(경찰공무원) 부문 1위</p>
+                            <p>[해커스소방] 2020 한국품질만족도 교육(온·오프라인 소방공무원) 부문 1위 해커스</p>
+                            <p>[해커스한국사] 2020 한국품질만족도 교육(온·오프라인 한국사능력검정) 부문 1위 해커스</p>
+                            <p>[해커스 공인중개사] 한경비즈니스선정 2020 한국품질만족도 교육(온오프라인 공인중개사) 부문 1위 해커스</p>
+                            <p>[해커스 주택관리사] 한경비즈니스선정 2020 한국품질만족도 교육(온·오프라인 주택관리사) 부문 1위 해커스</p>
+                            <p>[해커스 원격평생교육원] 국평원 정보공시, 전체과목 별 학습자 수 지계기준 (2018년 하반기)</p>
+                            <p>[해커스자격증] 한경비즈니스 선정 2020 한국품질만족도 교육(온·오프라인 자격증) 부문 1위 해커스</p>
+                            <p>[해커스한국사] 한경비즈니스 선정 2020 한국품질만족도 교육(온·오프라인 한국사능력검정) 부문 1위 해커스</p>
+                            <p>[해커스독학사] 한경비즈니스 선정 2020 한국품질만족도 교육(온·오프라인 독학사) 부문 1위 해커스</p>
+                            <p>[해커스임용] 헤럴드미디어 2018 대학생이 선정한 교원임용학원 강의만족도 1위</p>
+                            <p>[해커스편입] 한경비즈니스 선정 2020 한국품질만족도 교육(온·오프라인 편입) 부문 1위 해커스</p>
+                            <p>[해커스 유학컨설팅] 중앙SUNDAY선정 2017소비자평가 No.1 브랜드 유학부문 1위</p>
+                            <p>[해커스 SAT] 한경비즈니스 선정 2020 한국품질만족도 교육(온·오프라인 SAT) 부문 1위 해커스</p>
+                            <p>[해커스영어] 2016 고객만족브랜드 대상 대한민국 만족도 1위 영어사이트부문 수상 (한국마케팅포럼 주관)</p>
+                            <p>[고우해커스] 랭키닷컴 유학/어학연수 분야 기준 방문자 수 1위, 2019년 8월 3, 4주 발표 랭키순위 기준</p>
+                            <p>[교재] 해커스 토익 리딩 - 20년 동안 예스 24 '베스트셀러 20위'에 가장 많이 이름을 올린 도서 1위</p>
+                        </div>
+                        <div class="arrow"><img src="./img/arrow.jpg" alt="내용 보기 버튼"></div>
+                    </section>
+
+                    <!-- //1위 -->
+
+                    <!-- 나눔활동 -->
+                    <section class="share">
+                        <h2>나눔활동</h2>
+                        <h3>나눔의 철학을 실천하는 해커스 교육그룹</h3>
+
+                        <!-- Swiper -->
+                        <div class="swiper-container mySwiper">
+                            <div class="swiper-wrapper s_wrap">
+                                <div class="swiper-slide"><img src="./img/share_img_off01.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off02.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off03.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off04.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off05.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off06.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off07.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off08.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off09.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off10.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off11.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off12.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off13.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off14.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off15.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off16.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off17.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off18.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off19.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off20.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off21.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off22.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off23.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off24.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off25.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off26.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off27.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off28.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off29.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off30.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off31.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off32.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off33.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off34.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off35.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off36.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off37.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off38.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off39.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off40.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off51.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off52.jpg" alt="나눔활동"></div>
+                                <div class="swiper-slide"><img src="./img/share_img_off53.jpg" alt="나눔활동"></div>
+                            </div>
+                        </div>
+
+                    </section>
+                    <!-- //나눔활동 -->
+
+                    <!-- contact -->
+                    <section class="contact">
+                        <div class="inner">
+                            <h2>당신이 만드는 해커스</h2>
+                            <h3>해커스는 여러분들에게 언제나 열려 있습니다.<br>더 나은 해커스를 위해 여러분의 목소리에 귀 기울이겠습니다.</h3>
+                            <ul>
+                                <li><img src="./img/recruit.png" alt="해커스 인재채용">
+                                    <h4>해커스 인재채용</h4>
+                                    <p>교육분야 최고의 권위를 이어나갈<br>인재를 모집합니다</p>
+                                    <a class="btn">채용 사이트</a>
+                                </li>
+                                <li><img src="./img/wish.png" alt="해커스에 바란다">
+                                    <h4>해커스에 바란다</h4>
+                                    <p>불편사항 및 오류를 남겨주시면,<br>성실히 응답해 드리겠습니다</p>
+                                    <a class="btn">의견남기기</a>
+                                </li>
+                                <li><img src="./img/counsel.png" alt="수강상담">
+                                    <h4>수강상담</h4>
+                                    <p>회원 여러분의 궁금한 사항을
+                                        <br>해결해 드리겠습니다</p>
+                                    <a class="btn">상담하기</a>
+                                </li>
+                                <li><img src="./img/ad.png" alt="콘텐츠/광고제휴">
+                                    <h4>콘텐츠/광고제휴</h4>
+                                    <p>해커스와 함께 광고 및 제휴를<br>진행하실 분들을 기다립니다</p>
+                                    <a class="btn">B2B 제휴제안</a>
+                                    <a class="btn">해커스 매거진 광고</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- //contact -->
+                </main>
+
+                <!-- footer -->
+                <footer>
+                    <div class="inner">
+                        <p>고객상담센터<b>02-566-0001</b>
+                        </p>
+                        <span>주중 06:30 ~ 22:00 / 주말 08:00 ~ 22:00</span>
+
+                        <ul>
+                            <li>
+                                <a href="" title="해커스 블로그로 이동"></a><img src="./img/blog.png" alt="블로그 아이콘"></li>
+                            <li>
+                                <a href="" title="해커스 페이스북으로 이동"></a><img src="./img/facebook.png" alt="페이스북 아이콘"></li>
+                            <li>
+                                <a href="" title="해커스 트위터로 이동"></a><img src="./img/twitter.png" alt="트위터 아이콘"></li>
+                            <li>
+                                <a href="" title="해커스 유튜브로 이동"></a><img src="./img/youtube.png" alt="유튜브 아이콘"></li>
+                        </ul>
+                    </div>
+                    <div class="f_bottom">
+                        <img src="./img/footer_logo.png" alt="해커스 교육그룹 로고">
+                        <ul class="footer_navi">
+                            <li>
+                                <a href="#" title="오시는길">
+                                    오시는길
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="오시는길">
+                                    불편사항 신고
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="오시는길">
+                                    개인정보처리방침
+                                </a>
+                            </li>
+                        </ul>
+                        <p>Copyright &copy; HAKCERS Education Group All Right reserved</p>
+                    </div>
+                </footer>
+
+            </body>
+
+        </html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>배너슬라이드</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0 auto;
+            }
+            li,
+            ol,
+            ul {
+                list-style: none;
+            }
+            /* 배너 슬라이드 */
+
+            .inner {
+                width: 1100px;
+                margin: 0 auto;
+            }
+
+            .banner_wrap {
+                width: 100%;
+                height: 500px;
+                position: relative;
+                display: flex;
+                overflow: hidden;
+                background-color: #ff08;
+            }
+
+            .banner_wrap .banner_slide {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 70px 0;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+
+            }
+
+            .banner_wrap .banner_slide li {
+                width: 33%;
+            }
+
+            .banner_wrap .page_btn {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translate(-50%);
+                z-index: 999;
+                cursor: pointer;
+            }
+
+            .banner_wrap .page_btn li{
+                font-size: 17px;
+                padding: 5px;
+                font-weight: bold;
+
+            }
+
+            .banner_wrap .page_btn li.page_on {
+                color: #35b9ed;
+                border-bottom: 1px solid #35b9ed;
+
+            }
+        </style>
+
+        <!--제이쿼리 라이브러리 cdn 방식으로 연결-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                // let wWidth = $(window).width(); //현재 윈도우의 가로크기 구해서 변수에 저장
+                // console.log(wWidth);
+              
+                let n = $('.banner_wrap .page_btn li').index(); //0
+                console.log(n);
+
+                const p_btn = $('.banner_wrap .page_btn li'); //페이지버튼
+
+                //페이지 버튼을 클릭시 해당하는 슬라이드 보이게 하기
+                p_btn.click(function () {
+                    n = $(this).index();
+                    console.log(n); //선택한 콘트롤 버튼의 인덱스값을 확인
+
+                    //페이지 버튼의 서식을 모두제거하고 선택한 페이지 버튼에만 서식을 적용
+                    $('.banner_wrap .page_btn li').removeClass('page_on');
+                    $(this).addClass('page_on');
+
+                    //$(this).addClass('on').siblings().removeClass('on');
+
+                    $('.banner_wrap .banner_slide')
+                        .stop()
+                        .fadeOut(); //보이는 배너 슬라이드 숨기고,
+                    $('.banner_wrap .banner_slide')
+                        .eq(n)
+                        .stop()
+                        .fadeIn(); //인덱스 값에 해당하는 배너 슬라이드만 보이게 한다.
+                });
+
+                function moveLeft() { //0, 1, 2, 0순으로 변경
+                    //보이는 이미지 부터 숨기고
+                    $('.banner_wrap .banner_slide')
+                        .stop()
+                        .fadeOut();
+                    //페이지 버튼 서식을 모두 제거하고
+                    $('.banner_wrap .page_btn li').removeClass('page_on');
+                    if (n == 2) {
+                        n = 0;
+                    } else {
+                        n++;
+                    }
+                    //인덱스값에 해당하는 이미지가 보이게함.
+                    $('.banner_wrap .banner_slide')
+                        .eq(n)
+                        .stop()
+                        .fadeIn();
+                    //해당하는 페이지버튼에 서식적용
+                    $('.banner_wrap .page_btn li')
+                        .eq(n)
+                        .addClass('page_on');
+                }
+                var Timer = setInterval(moveLeft, 3000);
+
+                //페이지 버튼에 마우스 오버시 시간을 제거하여 멈추게 하고 다시 마우스를 빼면 자동으로 움직이게 한다.
+                $('.banner_wrap .page_btn').hover(function () {
+                    clearInterval(Timer);
+                }, function () {
+                    Timer = setInterval(moveLeft, 3000);
+                });
+
+            });
+        </script>
+    </head>
+
+    <article class="banner_wrap">
+        <ul class="banner_slide inner">
+            <li>
+                <a href="javascript:void(0)"><img src="./img/banner_0709_v2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/hackercom_talk_allfreepass0won_bnr3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr4.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr5_v3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr17_v8.jpg" alt=""></a>
+            </li>
+        </ul>
+
+        <ul class="banner_slide inner">
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr24_v9.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr8.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr9.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr10_v2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr11_v3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr1_v25.jpg" alt=""></a>
+            </li>
+        </ul>
+
+        <ul class="banner_slide inner">
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr7_v06.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr14_v4.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr19_v2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr15_v4.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/issue_bnr7_v9.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="./img/banner_210303_v2.jpg" alt=""></a>
+            </li>
+        </ul>
+
+        <!-- 페이지 -->
+        <ul class="page_btn">
+            <li class="page_on">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </article>
+
+</body>
+</html>

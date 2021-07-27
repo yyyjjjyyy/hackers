@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>제이쿼리 문서객체(DOM)조작_실습예제01_02</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            li,
+            ol,
+            ul {
+                list-style: none;
+            }
+            a {
+                text-decoration: none;
+                color: #333;
+            }
+            body {
+                font-family: "맑은 고딕", arial, sans-serif;
+                font-size: 12px;
+                color: #333;
+            }
+           
+/* 해커스 이슈 */
+.issue h2 {
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    padding: 140px 0 20px;
+}
+
+.issue #tab_con {
+    width: 100%;
+    background-image: url("../img/issue_mv1_bg0.jpg");
+    background-position: center;
+}
+
+.issue #tab_con .inner {
+    width: 1100px; margin: 0 auto;
+    position: relative;
+}
+
+.issue #tab_con .tab_banner img {
+    width: 463px;
+    padding-top: 70px;
+    display: block;
+
+}
+
+.issue #tab_con .tab_banner {
+    width: 100%;
+    height: 500px;
+    background-image: url("../img/issue_mv1_bg0.jpg");
+    background-position: center;
+
+}
+
+.issue #tab_con ul.tab_menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 180px;
+    height: 500px;
+}
+
+.issue #tab_con .tab_menu li {
+    height: 82px;
+    padding: 15px 0 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+    background-color: rgba(255, 255, 255, 0.911);
+}
+
+#tab_con .tab_menu > li a {
+    padding: 10px 0;
+    display: block;
+    font-size: 19px;
+    color: #707070;
+}
+
+.issue #tab_con .tab_menu li:hover {
+    background-color: #09ceff;
+    background-image: url("http://www.hackers.com/images/main/renew/issue_tab_bg.png") no-repeat 0 0;
+}
+
+.issue #tab_con .tab_menu li a:hover {
+    color: #fff;
+}
+        </style>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous"/>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                //1. 탭메뉴 콘텐츠 제이쿼리 구현
+                let gnb = $('#tab_con >.inner> ul > li >a');
+
+                gnb.mouseenter(function () { //마우스 오버시 아래 내용을 실행한다.
+                    let url = $(this).attr('href'); //가져오기
+                    //console.log(url); //증명하기
+
+                    $('.tab_banner img').attr('src', url); //대입하기
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!-- 해커스 이슈 -->
+        <section class="issue">
+            <h2>
+                해커스 이슈</h2>
+
+            <article id="tab_con">
+                <div class="inner">
+
+                <div class="tab_banner">
+                    <img src="./img/tabcon01.png" alt="300만의 선택, 해커스어학원">
+                </div>
+                <ul class="tab_menu">
+                    <li>
+                        <a href="./img/tabcon02.png">300만의 해커스어학원</a>
+                    </li>
+                    <li>
+                        <a href="./img/tabcon03.png">공인중개사<br>합격자모임</a>
+                    </li>
+                    <li>
+                        <a href="./img/tabcon04.png">공무원<br>합격자의 밤</a>
+                    </li>
+                    <li>
+                        <a href="./img/tabcon05.png">상위권대 합격비법<br>해커스 편입</a>
+                    </li>
+                    <li>
+                        <a href="./img/tabcon05.png">해커스 체전</a>
+                    </li>
+                    <li>
+                        <a href="./img/tabcon06.png">하버드 국제보건학<br>합격 스토리</a>
+                    </li>
+                </ul>
+            </div>
+
+            </article>
+        </section>
+
+    </body>
+</html>
