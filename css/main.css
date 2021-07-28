@@ -12,8 +12,7 @@ main .visual video {
 main .visual {
     width: 100%;
     /* position: absolute; */
-    z-index: 10;
-    background-color: wheat;
+    z-index: 10; 
     padding: 0 0 50px;
 
 }
@@ -452,9 +451,17 @@ main .visual .search {
     box-sizing: border-box;
     margin-bottom: 2px; 
     background-image: url(../img/issue_tab_bg.png);
+    position: relative;
 }
 
-.issue #tab_con .tab_menu li.t_active{
+ 
+.issue #tab_con .tab_menu li a .play_icon{
+    display: none;
+    transition: .5s;
+  
+}
+
+.issue #tab_con .tab_menu li.t_active {
     background-image: url(../img/issue_tab_bg.png);
     background-position-x: 195px ;
     transform: translateX(-15px);
@@ -462,9 +469,30 @@ main .visual .search {
     padding:10px 30px;
     letter-spacing: -1.5px;
 }
+
 .issue #tab_con .tab_menu li a:hover {
     color: #fff;
 } 
+
+.issue #tab_con .tab_menu li a:hover .play_icon{
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+   
+    animation: playShow .3s;
+    animation-delay: 0s;
+}
+
+@keyframes playShow{
+    from{
+        transform: translateX(-2px);        
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
 
 #tab_con .tab_menu > li a {
     padding: 10px 0;
